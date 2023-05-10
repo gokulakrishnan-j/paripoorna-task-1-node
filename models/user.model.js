@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+const id = new mongoose.Types.ObjectId();
 
 const employeeSchema = new mongoose.Schema(
   {
@@ -38,5 +39,6 @@ const employeeSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+const Model = mongoose.model("userdetails", employeeSchema);
 
-export default mongoose.model("datas", employeeSchema);
+export default Model;
