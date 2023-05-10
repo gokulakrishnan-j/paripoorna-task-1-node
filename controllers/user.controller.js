@@ -4,7 +4,7 @@ export const creatingUser = async (request, response) => {
   try {
     const users = new UserData(request.body);
     const userDetails = await users.save();
-    console.log(userDetails);
+
     response.status(201).send({ message: "Created sucessfully" });
   } catch (err) {
     response.status(500).send({ error: err });

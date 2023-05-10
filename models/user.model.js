@@ -40,5 +40,7 @@ const employeeSchema = new mongoose.Schema(
   }
 );
 const Model = mongoose.model("userdetails", employeeSchema);
+const doc = new Model();
+doc._id = mongoose.Types.ObjectId;
 
 export default Model;

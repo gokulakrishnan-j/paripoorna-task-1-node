@@ -1,4 +1,4 @@
-export const errorMessage = {
+export const userErrorMessage = {
   name: { message: "Name is not provided" },
   email: { message: "Email is not provided" },
   emailValidation: { message: "Not a vaild email provided" },
