@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
-const id = new mongoose.Types.ObjectId();
 
+// Schema
 const employeeSchema = new mongoose.Schema(
   {
+    _id: {
+      type: mongoose.Schema.Types.ObjectId,
+      default: new mongoose.Types.ObjectId(),
+    },
     name: {
       type: String,
       required: true,
@@ -37,10 +41,9 @@ const employeeSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    _id: false,
   }
 );
 const Model = mongoose.model("userdetails", employeeSchema);
-const doc = new Model();
-doc._id = mongoose.Types.ObjectId;
 
 export default Model;

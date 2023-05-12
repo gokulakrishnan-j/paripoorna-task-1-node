@@ -5,16 +5,24 @@ import {
   deleteUser,
   editUserDetails,
 } from "../controllers/user.controller.js";
-import { validation } from "../middlewares/user.middleware.js";
+import {
+  validation,
+  deleteValidationMiddleware,
+  emailUniqueValidation,
+} from "../middlewares/user.middleware.js";
 
 const router = express.Router();
 
-router.post("/", [validation], creatingUser);
+// Route to post a data
+router.post("/", [validation, emailUniqueValidation], creatingUser);
 
+// Route to get data
 router.get("/", getUserDetails);
 
-router.delete("/:id", deleteUser);
+// Route to delete particular data with id
+router.delete("/:id", [deleteValidationMiddleware], deleteUser);
 
+// Route to edit particular data
 router.put("/:id", [validation], editUserDetails);
 
 export default router;

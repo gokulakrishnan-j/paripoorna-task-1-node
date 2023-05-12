@@ -1,4 +1,2 @@
-import * as dotenv from "dotenv";
-dotenv.config();
-
+// Mongodb url
 export default { MONGO_URL: process.env.MONGO_URL };
